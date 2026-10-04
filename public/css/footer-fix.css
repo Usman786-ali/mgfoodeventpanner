@@ -1,0 +1,54 @@
+/* Footer Copyright - Remove Bottom Gap */
+.footer-copyright {
+    margin-bottom: 0 !important;
+    padding-bottom: 20px !important;
+}
+
+footer,
+.main-footer {
+    margin-bottom: 0 !important;
+}
+
+body {
+    margin-bottom: 0 !important;
+}
+
+/* Contact Cards - Make Smaller */
+.contact-card {
+    padding: 25px 20px !important;
+    max-width: 280px !important;
+    margin: 0 auto 20px auto !important;
+}
+
+.contact-icon {
+    width: 50px !important;
+    height: 50px !important;
+    margin: 0 auto 15px auto !important;
+}
+
+.contact-icon svg {
+    width: 24px !important;
+    height: 24px !important;
+}
+
+.contact-card h4 {
+    font-size: 18px !important;
+    margin-bottom: 8px !important;
+}
+
+.contact-card p {
+    font-size: 14px !important;
+}
+
+/* Center Contact Form */
+.contact-grid {
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+}
+
+.contact-form-wrapper {
+    max-width: 700px !important;
+    width: 100% !important;
+    margin: 0 auto !important;
+}

@@ -1,0 +1,44 @@
+/* Footer Social Icons - White Circle with Black Icon */
+.footer-social .social-icon {
+    background: white !important;
+    border: 2px solid #D4A853 !important;
+    border-radius: 50% !important;
+    width: 45px !important;
+    height: 45px !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    margin: 0 8px !important;
+    transition: all 0.3s ease !important;
+}
+
+.footer-social .social-icon svg {
+    fill: #000 !important;
+    transition: fill 0.3s ease !important;
+}
+
+/* Hover Effects - Original Brand Colors */
+.footer-social .social-icon:nth-child(1):hover svg {
+    fill: #1877f2 !important;
+    /* Facebook Blue */
+}
+
+.footer-social .social-icon:nth-child(2):hover svg {
+    fill: #E4405F !important;
+    /* Instagram Pink */
+}
+
+.footer-social .social-icon:nth-child(3):hover svg {
+    fill: #FF0000 !important;
+    /* YouTube Red */
+}
+
+.footer-social .social-icon:nth-child(4):hover svg {
+    fill: #000000 !important;
+    /* TikTok Black */
+}
+
+.footer-social .social-icon:hover {
+    transform: translateY(-3px) !important;
+    box-shadow: 0 5px 15px rgba(255, 255, 255, 0.3) !important;
+}
