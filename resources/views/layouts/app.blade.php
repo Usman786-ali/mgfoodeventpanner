@@ -150,7 +150,7 @@
                             </li>
                             <li><a href="#">Brand Activations & Giveaways</a></li>
                             <li><a href="{{ route('portfolio') }}">Gallery</a></li>
-                            <li><a href="#">Blog</a></li>
+                            <li><a href="{{ route('blog') }}">Blog</a></li>
                             <li><a href="{{ route('contact') }}">Contact Us</a></li>
                         </ul>
                     </div>

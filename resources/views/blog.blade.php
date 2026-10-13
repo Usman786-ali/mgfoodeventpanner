@@ -33,7 +33,7 @@
                 <div class="featured-post" data-aos="fade-up">
                     <div class="featured-post-image">
                         <span class="featured-badge">Featured</span>
-                        <img src="{{ asset('storage/' . $featuredBlog->image) }}" alt="{{ $featuredBlog->title }}">
+                        <img src="{{ $featuredBlog->featured_image_url }}" alt="{{ $featuredBlog->title }}">
                     </div>
                     <div class="featured-post-content">
                         <div class="post-meta">
@@ -56,7 +56,7 @@
                 @forelse($blogs as $index => $blog)
                     <article class="blog-card" data-aos="fade-up" data-aos-delay="{{ $index * 100 }}">
                         <div class="blog-card-image">
-                            <img src="{{ asset('storage/' . $blog->image) }}" alt="{{ $blog->title }}">
+                            <img src="{{ $blog->featured_image_url }}" alt="{{ $blog->title }}">
                             <span class="blog-category">{{ $blog->category }}</span>
                         </div>
                         <div class="blog-card-content">

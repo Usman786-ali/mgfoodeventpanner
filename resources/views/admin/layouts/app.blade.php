@@ -135,6 +135,17 @@
                     </div>
                 @endif
 
+                @if($errors->any())
+                    <div class="alert alert-danger" style="background: #f8d7da; color: #842029; border: 1px solid #f5c2c7; border-radius: 8px; padding: 15px 20px; margin-bottom: 20px;">
+                        <strong>⚠️ Please fix the following errors:</strong>
+                        <ul style="margin: 8px 0 0; padding-left: 20px;">
+                            @foreach($errors->all() as $error)
+                                <li>{{ $error }}</li>
+                            @endforeach
+                        </ul>
+                    </div>
+                @endif
+
                 @yield('content')
             </div>
         </main>

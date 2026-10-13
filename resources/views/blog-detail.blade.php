@@ -12,7 +12,7 @@
     <section class="blog-hero" style="
             min-height: 50vh; 
             background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), 
-                        url('{{ $blog->image ? asset('storage/' . $blog->image) : asset('images/Blog-Background.jpeg') }}') center/cover;
+                        url('{{ $blog->featured_image_url }}') center/cover;
             display: flex;
             align-items: center;
             padding-top: 100px;">
@@ -40,7 +40,7 @@
             <div style="max-width: 900px; margin: 0 auto;">
                 <!-- Featured Image -->
                 @if($blog->image)
-                    <img src="{{ asset('storage/' . $blog->image) }}" alt="{{ $blog->title }}"
+                    <img src="{{ $blog->featured_image_url }}" alt="{{ $blog->title }}"
                         style="width: 100%; height: 500px; object-fit: cover; border-radius: 15px; margin-bottom: 40px;">
                 @endif
 

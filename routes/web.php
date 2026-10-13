@@ -122,15 +122,17 @@ Route::get('/blog', function () {
     $featuredBlog = App\Models\Blog::where('is_published', true)
         ->where('is_featured', true)
         ->latest()
-        ->first();
+        ->first() ?? App\Models\Blog::where('is_published', true)->latest()->first();
 
     return view('blog', compact('blogs', 'featuredBlog'));
 })->name('blog');
 
 Route::get('/blog/{slug}', function ($slug) {
-    $blog = App\Models\Blog::where('slug', $slug)
-        ->where('is_published', true)
-        ->firstOrFail();
+    $query = App\Models\Blog::where('slug', $slug);
+    if (!Illuminate\Support\Facades\Auth::guard('admin')->check()) {
+        $query->where('is_published', true);
+    }
+    $blog = $query->firstOrFail();
 
     return view('blog-detail', compact('blog'));
 })->name('blog.show');

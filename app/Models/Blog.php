@@ -41,14 +41,16 @@ class Blog extends Model
     {
         parent::boot();
 
-        static::creating(function ($blog) {
+        static::saving(function ($blog) {
             if (empty($blog->slug)) {
                 $slug = Str::slug($blog->title);
+                if (empty($slug)) {
+                    $slug = 'post-' . time();
+                }
                 $originalSlug = $slug;
                 $count = 1;
 
-                // Check if slug exists and make it unique
-                while (static::where('slug', $slug)->exists()) {
+                while (static::where('slug', $slug)->where('id', '!=', $blog->id ?? 0)->exists()) {
                     $slug = $originalSlug . '-' . $count;
                     $count++;
                 }
@@ -56,5 +58,16 @@ class Blog extends Model
                 $blog->slug = $slug;
             }
         });
+    }
+
+    public function getFeaturedImageUrlAttribute(): string
+    {
+        if ($this->image) {
+            if (str_starts_with($this->image, 'http://') || str_starts_with($this->image, 'https://')) {
+                return $this->image;
+            }
+            return asset('storage/' . $this->image);
+        }
+        return asset('images/Blog-Background.jpeg');
     }
 }

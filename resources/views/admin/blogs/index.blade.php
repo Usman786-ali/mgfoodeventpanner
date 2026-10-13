@@ -31,14 +31,15 @@
                             </span>
                         </td>
                         <td>
-                            <div style="display: flex; gap: 10px;">
-                                <a href="{{ route('admin.blogs.edit', $blog) }}" class="btn-edit">Edit</a>
+                            <div style="display: flex; gap: 8px; align-items: center;">
+                                <a href="{{ route('blog.show', $blog->slug) }}" target="_blank" class="btn btn-sm btn-outline-secondary" style="padding: 6px 12px; font-size: 13px; text-decoration: none;">View ↗</a>
+                                <a href="{{ route('admin.blogs.edit', $blog) }}" class="btn-edit" style="text-decoration: none;">Edit</a>
                                 <form method="POST" action="{{ route('admin.blogs.destroy', $blog) }}" style="display: inline;"
                                     onsubmit="return confirm('Are you sure?')">
                                     @csrf
                                     @method('DELETE')
                                     <button type="submit" class="btn btn-danger"
-                                        style="padding: 8px 16px; font-size: 13px;">Delete</button>
+                                        style="padding: 6px 14px; font-size: 13px;">Delete</button>
                                 </form>
                             </div>
                         </td>
@@ -60,7 +61,7 @@
     </div>
 @endsection
 
-@push('styles')
+@section('styles')
     <style>
         .page-header {
             display: flex;
@@ -75,4 +76,4 @@
             color: #1a1a2e;
         }
     </style>
-@endpush
+@endsection
